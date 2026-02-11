@@ -90,9 +90,5 @@ class SegmentationEngine:
         frequency_score = self._frequency_score(customer.total_orders_12m)
         monetary_score = self._monetary_score(customer.total_spend_12m)
         score = int( recency_score + frequency_score + monetary_score)
-        print(f"Recency score: {recency_score}")
-        print(f"Frequency score: {frequency_score}")
-        print(f"Spend score: {monetary_score}")
-        print(f"Score: {score}")
        
         return self._apply_constraints(customer, self._map_score_to_tier(score))

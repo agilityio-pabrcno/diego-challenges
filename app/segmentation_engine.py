@@ -53,8 +53,9 @@ class SegmentationEngine:
     def _frequency_score(total_orders_12m: int) -> float:
         points_per_order = 3
         return min(30, min(100, total_orders_12m) * points_per_order)
-
-    def _monetary_score(self, total_spend_12m: float) -> float:
+    
+    @staticmethod
+    def _monetary_score(total_spend_12m: float) -> float:
         points_per_dollar = 0.03
         return max(0, min(30, total_spend_12m * points_per_dollar))
         

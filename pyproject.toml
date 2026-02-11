@@ -1,0 +1,8 @@
+[project]
+name = "diego_challenges"
+version = "0.1.0"
+dependencies = ["pytest>=7.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

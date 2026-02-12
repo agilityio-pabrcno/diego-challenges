@@ -265,10 +265,10 @@ class TestRealisticCustomers:
 
     def test_zero_everything_is_bronze(self):
         zero_customer = CustomerActivity(
-            last_purchase_date=datetime.now() - timedelta(days=400),
+            last_purchase_date=0,
             total_orders_12m=0,
             total_spend_12m=0,
-            account_age_days=500,
+            account_age_days=0,
         )
         engine = SegmentationEngine()
         assert engine.calculate_tier(zero_customer) == CustomerTier.BRONZE
